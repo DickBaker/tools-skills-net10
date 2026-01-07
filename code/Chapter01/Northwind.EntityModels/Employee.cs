@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
@@ -64,10 +62,10 @@ public partial class Employee
     public string? PhotoPath { get; set; }
 
     [InverseProperty("ReportsToNavigation")]
-    public virtual ICollection<Employee> InverseReportsToNavigation { get; set; } = new List<Employee>();
+    public virtual ICollection<Employee> InverseReportsToNavigation { get; set; } = [];
 
     [InverseProperty("Employee")]
-    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+    public virtual ICollection<Order> Orders { get; set; } = [];
 
     [ForeignKey("ReportsTo")]
     [InverseProperty("InverseReportsToNavigation")]
@@ -75,5 +73,5 @@ public partial class Employee
 
     [ForeignKey("EmployeeId")]
     [InverseProperty("Employees")]
-    public virtual ICollection<Territory> Territories { get; set; } = new List<Territory>();
+    public virtual ICollection<Territory> Territories { get; set; } = [];
 }

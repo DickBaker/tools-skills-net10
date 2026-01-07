@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Northwind.EntityModels;
 
@@ -18,5 +15,5 @@ public partial class CustomerDemographic
 
     [ForeignKey("CustomerTypeId")]
     [InverseProperty("CustomerTypes")]
-    public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
+    public virtual ICollection<Customer> Customers { get; set; } = [];
 }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Northwind.EntityModels;
 
@@ -17,5 +14,5 @@ public partial class Region
     public string RegionDescription { get; set; } = null!;
 
     [InverseProperty("Region")]
-    public virtual ICollection<Territory> Territories { get; set; } = new List<Territory>();
+    public virtual ICollection<Territory> Territories { get; set; } = [];
 }

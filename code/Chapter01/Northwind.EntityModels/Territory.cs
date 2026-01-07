@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace Northwind.EntityModels;
 
@@ -25,5 +22,5 @@ public partial class Territory
 
     [ForeignKey("TerritoryId")]
     [InverseProperty("Territories")]
-    public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
+    public virtual ICollection<Employee> Employees { get; set; } = [];
 }

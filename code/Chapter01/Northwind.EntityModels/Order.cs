@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
@@ -65,7 +63,7 @@ public partial class Order
     public virtual Employee? Employee { get; set; }
 
     [InverseProperty("Order")]
-    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = [];
 
     [ForeignKey("ShipVia")]
     [InverseProperty("Orders")]
