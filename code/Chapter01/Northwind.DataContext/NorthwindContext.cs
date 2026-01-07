@@ -228,7 +228,7 @@ public partial class NorthwindContext : DbContext
     });
 
     modelBuilder.Entity<OrderDetailsExtended>(entity =>
-    {
+                entity.ToView("Order Details Extended"));
       entity.ToView("Order Details Extended");
     });
 
